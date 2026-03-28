@@ -9,7 +9,7 @@
   <div class="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-px" style="background: linear-gradient(90deg, transparent, #D4A843, transparent);"></div>
 
   <div class="relative z-10 px-4">
-      <p class="text-amber-400/70 text-xs tracking-[0.4em] uppercase mb-4" style="font-family:'Cinzel',serif;">✦ Salon de coiffure africain ✦</p>
+      <p class="text-amber-400/70 text-xs tracking-[0.4em] uppercase mb-4" style="font-family:'Cinzel',serif;">✦ Salon de coiffure ✦</p>
       <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 tracking-tight uppercase leading-tight" style="font-family:'Cinzel',serif;">
           Bienvenue chez <br><span class="text-transparent bg-clip-text" style="background: linear-gradient(135deg, #D4A843 0%, #F0C96A 50%, #D4A843 100%);">Barber MX</span>
       </h1>
@@ -53,8 +53,8 @@
         </div>
         <h3 class="text-xl font-bold text-white uppercase" style="font-family:'Cinzel',serif;">{{ $coiffeur->utilisateur->nom }}</h3>
         <p class="text-sm text-amber-400/80 mt-2 font-medium tracking-wide text-xs">
-          @if($coiffeur->specialites->isNotEmpty())
-            {{ $coiffeur->specialites->pluck('nom')->join(', ') }}
+          @if($coiffeur->typesDeCoupes && $coiffeur->typesDeCoupes->isNotEmpty())
+            {{ $coiffeur->typesDeCoupes->pluck('nom')->join(', ') }}
           @else
             Artisan Barbier
           @endif
